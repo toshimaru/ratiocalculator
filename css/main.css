@@ -1,0 +1,124 @@
+.px-unit {
+	font-size: 18px;
+	text-align: center;
+	border-bottom: solid 1px #ABABAB;
+}
+
+.px-unit h1{
+	font-size: 38px;
+	padding-bottom: 20px;
+	text-shadow: 0px 2px 3px #333;
+}
+
+.px-unit input[type="text"]{
+	font-size: 20px;
+	height: 30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.row1 {
+	padding-bottom: 50px;
+	height:200px;
+}
+
+.row2 {
+	padding-bottom: 40px;
+	height:220px;
+}
+
+
+/* boxes */
+
+.box {
+	display: none;
+	text-align: center;
+	box-shadow: 8px 8px 10px #222;
+}
+
+.box span{
+	font-size: 3em;
+	position: relative;
+	text-shadow: 2px 2px 3px #222;
+}
+
+
+#Abox {
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #052C6E), color-stop(1, #0F4FA8));
+	background: -o-linear-gradient(bottom left, #052C6E 0%, #0F4FA8 100%);
+	background: -moz-linear-gradient(bottom left, #052C6E 0%, #0F4FA8 100%);
+	width: 270px;
+	height: 152px;
+}
+
+#Bbox {
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #7A005C), color-stop(1, #DD37B4));
+	background: -o-linear-gradient(bottom left, #7A005C 0%, #DD37B4 100%);
+	background: -moz-linear-gradient(bottom left, #7A005C 0%, #DD37B4 100%);
+	width: 270px;
+	height: 180px;
+}
+
+#Cbox {
+	background-color: #5FEB3B;
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #1D8C00), color-stop(1, #5FEB3B));
+	background: -o-linear-gradient(bottom left, #1D8C00 0%, #5FEB3B 100%);
+	background: -moz-linear-gradient(bottom left, #1D8C00 0%, #5FEB3B 100%);
+	width: 270px;
+	height: 203px;
+}
+
+#Dbox {
+	background-color: #A68C00;
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #A68C00), color-stop(1, #FFE140));
+	background: -o-linear-gradient(bottom left, #A68C00 0%, #FFE140 100%);
+	background: -moz-linear-gradient(bottom left, #A68C00 0%, #FFE140 100%);
+	width: 270px;
+	height: 167px;
+}
+
+#Abox span{
+	top: 60px;
+}
+
+#Bbox span{
+	top: 70px;
+}
+
+#Cbox span{
+	top: 85px;
+}
+
+#Dbox span{
+	top: 68px;
+}
+
+#main {
+	background-color: #343434;
+}
+
+#form label{
+	display: inline;
+}
+
+#switcher span{
+	padding: 0 4px;
+}
+
+#share {
+	height: 35px;
+}
+	#twi {
+		display: inline-block;
+	}
+
+	#fb {
+		display: inline-block;
+		width: 140px;
+	}
+
+footer {
+	padding: 40px 0px;
+	background-color: #000;
+}
