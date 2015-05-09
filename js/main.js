@@ -79,7 +79,7 @@ $(function () {
 	$("#px").tooltip({'title': 'invalid number!', 'trigger': 'manual', 'placement': 'bottom'});
 
 	var boxFade = function () {
-		$("div:hidden:first").fadeIn(300, function () {
+		$(".container div:hidden:first").fadeIn(300, function () {
 			boxFade();
 		});
 	}
