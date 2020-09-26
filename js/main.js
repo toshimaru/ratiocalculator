@@ -1,7 +1,6 @@
 "use strict";
 
 var mode = 'w';
-
 var boxes = ['A', 'B', 'C', 'D'];
 
 var Ratio = function (num) {
@@ -34,7 +33,7 @@ var Ratio = function (num) {
 	}
 }
 
-$("#px").keyup(function() {
+$("#px").on('change keyup', function() {
 	if (this.value === '') {
 		$("#px").tooltip('hide');
 		$('.span2 span').text('');
@@ -68,10 +67,12 @@ function changeText (n) {
 $('input:radio').change(function () {
 	if ($(this).val() === 'w') {
 		mode = 'w';
-		$("#px").attr('placeholder', 'width').keyup();
+		$("#px").attr('placeholder', 'width')
+		        .trigger('change');
 	} else {
 		mode = 'h';
-		$("#px").attr('placeholder', 'height').keyup();
+		$("#px").attr('placeholder', 'height')
+		        .trigger('change');
 	};
 });
 
