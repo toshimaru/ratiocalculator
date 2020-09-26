@@ -94,16 +94,12 @@ main {
 	padding: 0 4px;
 }
 
-#share {
-	height: 35px;
-}
-	#fb {
-		display: inline-block;
-		width: 140px;
-	}
-
 footer {
 	text-align: center;
 	padding: 40px 0px;
 	background-color: #000;
+}
+
+footer .twitter-share-button {
+	padding: 0 10px;
 }
