@@ -10,11 +10,9 @@
 	text-shadow: 0px 2px 3px #333;
 }
 
-.px-unit input[type="text"]{
+.px-unit input[type="number"] {
 	font-size: 20px;
 	height: 30px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 
@@ -94,7 +92,7 @@
 	top: 68px;
 }
 
-#main {
+main {
 	background-color: #343434;
 }
 
