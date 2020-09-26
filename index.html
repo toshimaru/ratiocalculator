@@ -12,82 +12,81 @@
 	<link rel="shortcut icon" href="http://ratiocalculator.toshimaru.net/static/img/favicon.ico">
 </head>
 <body>
-	<div id="main">
-	<div class="hero-unit px-unit">
-		<h1>Ratio Calculator</h1>
+	<main>
+		<div class="hero-unit px-unit">
+			<h1>Ratio Calculator</h1>
 
-		<form id="form">
-			<input id="px" type="text" class="input-medium" placeholder="width" maxlength="12">
-			<div id="switcher" class="clearfix">
-				<label>
-					<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
-					<span>width</span>
-				</label>
-				<label>
-					<input type="radio" name="wh" id="optionsRadios2" value="h">
-					<span>height</span>
-				</label>
-			</div>
-		</form>
-
-		<div id="share" class="clearfix">
-			<div id="twi">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="toshimaru_e">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
-			<div id="fb">
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fratiocalculator.toshimaru.net%2F&amp;width&amp;layout=button_count&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=266223253514933" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="row row1">
-			<div class="span4">
-				<div id="Abox" class="box">
-				<span>16:9</span>
+			<form id="form">
+				<input id="px" type="text" class="input-medium" placeholder="width" maxlength="12">
+				<div id="switcher" class="clearfix">
+					<label>
+						<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
+						<span>width</span>
+					</label>
+					<label>
+						<input type="radio" name="wh" id="optionsRadios2" value="h">
+						<span>height</span>
+					</label>
 				</div>
-			</div>
-			<div class="span2">
-				<p>width: <span id="A_w"></span> &nbsp;px</p>
-				<p>height: <span id="A_h"></span> &nbsp;px</p>
-			</div>
+			</form>
 
-			<div class="span4">
-				<div id="Dbox" class="box">
-				<span>golden ratio</span>
+			<div id="share" class="clearfix">
+				<div id="twi">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="toshimaru_e">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				</div>
-			</div>
-			<div class="span2">
-				<p>width: <span id="D_w"></span> &nbsp;px</p>
-				<p>height: <span id="D_h"></span> &nbsp;px</p>
+				<div id="fb">
+					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fratiocalculator.toshimaru.net%2F&amp;width&amp;layout=button_count&amp;action=recommend&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=266223253514933" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+				</div>
 			</div>
 		</div>
 
-		<div class="row row2">
-			<div class="span4">
-				<div id="Bbox" class="box">
-				<span>3:2</span>
+		<div class="container">
+			<div class="row row1">
+				<div class="span4">
+					<div id="Abox" class="box">
+					<span>16:9</span>
+					</div>
 				</div>
-			</div>
-			<div class="span2">
-				<p>width: <span id="B_w"></span> &nbsp;px</p>
-				<p>height: <span id="B_h"></span> &nbsp;px</p>
+				<div class="span2">
+					<p>width: <span id="A_w"></span> &nbsp;px</p>
+					<p>height: <span id="A_h"></span> &nbsp;px</p>
+				</div>
+
+				<div class="span4">
+					<div id="Dbox" class="box">
+					<span>golden ratio</span>
+					</div>
+				</div>
+				<div class="span2">
+					<p>width: <span id="D_w"></span> &nbsp;px</p>
+					<p>height: <span id="D_h"></span> &nbsp;px</p>
+				</div>
 			</div>
 
-			<div class="span4">
-				<div id="Cbox" class="box">
-				<span>4:3</span>
+			<div class="row row2">
+				<div class="span4">
+					<div id="Bbox" class="box">
+					<span>3:2</span>
+					</div>
 				</div>
-			</div>
-			<div class="span2">
-				<p>width: <span id="C_w"></span> &nbsp;px</p>
-				<p>height: <span id="C_h"></span> &nbsp;px</p>
+				<div class="span2">
+					<p>width: <span id="B_w"></span> &nbsp;px</p>
+					<p>height: <span id="B_h"></span> &nbsp;px</p>
+				</div>
+
+				<div class="span4">
+					<div id="Cbox" class="box">
+					<span>4:3</span>
+					</div>
+				</div>
+				<div class="span2">
+					<p>width: <span id="C_w"></span> &nbsp;px</p>
+					<p>height: <span id="C_h"></span> &nbsp;px</p>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	</div><!-- end of .main -->
+	</main>
 
 	<footer>
 		<div class="container">
