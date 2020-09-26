@@ -10,7 +10,7 @@
 	text-shadow: 0px 2px 3px #333;
 }
 
-.px-unit input {
+.px-unit input[type="number"] {
 	font-size: 20px;
 	height: 30px;
 	border-radius: 5px;
