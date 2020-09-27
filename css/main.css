@@ -1,3 +1,15 @@
+body {
+	font-family:'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #eeeeee;
+}
+
+.hero-unit {
+	padding: 20px 0 10px;
+	margin-bottom: 30px;
+	background-color: #1ec200;
+	background: linear-gradient(to right, #b94848, #1ec200);
+}
+
 .px-unit {
 	font-size: 18px;
 	text-align: center;
