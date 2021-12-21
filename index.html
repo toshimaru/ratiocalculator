@@ -11,13 +11,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-	<main>
-		<div class="hero-unit px-unit">
-			<h1>Ratio Calculator</h1>
 
-			<form id="form" onsubmit="return false;">
-				<input id="px" type="number" class="input-medium" placeholder="width" maxlength="12">
-				<div id="switcher" class="clearfix">
+<main>
+	<section class="py-5 text-center container">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light">Ratio Calculator</h1>
+				<!-- <p class="lead text-muted">
+					Something short and leading about the collection below—its contents, the creator, etc.
+				</p> -->
+				<p>
+					<input id="px" type="number" class="input-medium" placeholder="width" maxlength="12">
+				</p>
+				<p>
 					<label>
 						<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
 						<span>width</span>
@@ -26,69 +32,70 @@
 						<input type="radio" name="wh" id="optionsRadios2" value="h">
 						<span>height</span>
 					</label>
-				</div>
-			</form>
-		</div>
-
-		<div class="container">
-			<div class="row row1">
-				<div class="span4">
-					<div id="Abox" class="box">
-					<span>16:9</span>
-					</div>
-				</div>
-				<div class="span2">
-					<p>width: <span id="A_w"></span> &nbsp;px</p>
-					<p>height: <span id="A_h"></span> &nbsp;px</p>
-				</div>
-
-				<div class="span4">
-					<div id="Dbox" class="box">
-					<span>golden ratio</span>
-					</div>
-				</div>
-				<div class="span2">
-					<p>width: <span id="D_w"></span> &nbsp;px</p>
-					<p>height: <span id="D_h"></span> &nbsp;px</p>
-				</div>
-			</div>
-
-			<div class="row row2">
-				<div class="span4">
-					<div id="Bbox" class="box">
-					<span>3:2</span>
-					</div>
-				</div>
-				<div class="span2">
-					<p>width: <span id="B_w"></span> &nbsp;px</p>
-					<p>height: <span id="B_h"></span> &nbsp;px</p>
-				</div>
-
-				<div class="span4">
-					<div id="Cbox" class="box">
-					<span>4:3</span>
-					</div>
-				</div>
-				<div class="span2">
-					<p>width: <span id="C_w"></span> &nbsp;px</p>
-					<p>height: <span id="C_h"></span> &nbsp;px</p>
-				</div>
+				</p>
 			</div>
 		</div>
-	</main>
+	</section>
 
-	<footer>
-		<div class="container">
-			<p>
-				<a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-				<iframe
-					src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fratiocalculator.toshimaru.net&layout=button&size=small&width=69&height=20"
-					width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
-					allow="encrypted-media"></iframe>
-			</p>
-			<p>Designed and coded by <a href="https://twitter.com/toshimaru_e">@toshimaru_e</a>.</p>
+	<div class="container">
+		<div class="row row1">
+			<div class="span4">
+				<div id="Abox" class="box">
+				<span>16:9</span>
+				</div>
+			</div>
+			<div class="span2">
+				<p>width: <span id="A_w"></span> &nbsp;px</p>
+				<p>height: <span id="A_h"></span> &nbsp;px</p>
+			</div>
+
+			<div class="span4">
+				<div id="Dbox" class="box">
+				<span>golden ratio</span>
+				</div>
+			</div>
+			<div class="span2">
+				<p>width: <span id="D_w"></span> &nbsp;px</p>
+				<p>height: <span id="D_h"></span> &nbsp;px</p>
+			</div>
 		</div>
-	</footer>
+
+		<div class="row row2">
+			<div class="span4">
+				<div id="Bbox" class="box">
+				<span>3:2</span>
+				</div>
+			</div>
+			<div class="span2">
+				<p>width: <span id="B_w"></span> &nbsp;px</p>
+				<p>height: <span id="B_h"></span> &nbsp;px</p>
+			</div>
+
+			<div class="span4">
+				<div id="Cbox" class="box">
+				<span>4:3</span>
+				</div>
+			</div>
+			<div class="span2">
+				<p>width: <span id="C_w"></span> &nbsp;px</p>
+				<p>height: <span id="C_h"></span> &nbsp;px</p>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div class="container">
+		<p>
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+			<iframe
+				src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fratiocalculator.toshimaru.net&layout=button&size=small&width=69&height=20"
+				width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+				allow="encrypted-media"></iframe>
+		</p>
+		<p>Designed and coded by <a href="https://twitter.com/toshimaru_e">@toshimaru_e</a>.</p>
+	</div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
