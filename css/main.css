@@ -28,22 +28,16 @@ body {
 	border-radius: 5px;
 }
 
-.row1 {
-	padding-bottom: 50px;
-	height:200px;
+main {
+	background-color: #343434;
 }
 
-.row2 {
-	padding-bottom: 40px;
-	height:220px;
-}
-
-
-/* boxes */
 .box {
-	display: none;
+	/* display: none; */
 	text-align: center;
 	box-shadow: 8px 8px 10px #222;
+	display: grid;
+	place-items: center;
 }
 
 .box span {
