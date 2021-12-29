@@ -94,24 +94,6 @@ body {
 	top: 68px;
 }
 
-main {
-	background-color: #343434;
-}
-
-#form label{
-	display: inline;
-}
-
-#switcher span{
-	padding: 0 4px;
-}
-
-footer {
-	text-align: center;
-	padding: 40px 0px;
-	background-color: #000;
-}
-
-footer .twitter-share-button {
-	padding: 0 10px;
+.twitter-share-button {
+	margin-right: 1rem;
 }
