@@ -46,52 +46,30 @@ body {
 	box-shadow: 8px 8px 10px #222;
 }
 
-.box span{
-	font-size: 3em;
+.box span {
+	font-size: 3rem;
 	position: relative;
 	text-shadow: 2px 2px 3px #222;
 }
 
-#Abox {
+#sixteen-9-ratio {
 	background: linear-gradient(to right, #052C6E, #0F4FA8);
-	width: 270px;
-	height: 152px;
+	aspect-ratio: 16 / 9;
 }
 
-#Bbox {
-	background: linear-gradient(to right, #7A005C, #DD37B4);
-	width: 270px;
-	height: 180px;
-}
-
-#Cbox {
-	background-color: #5FEB3B;
-	background: linear-gradient(to right, #1D8C00, #5FEB3B);
-	width: 270px;
-	height: 203px;
-}
-
-#Dbox {
-	background-color: #A68C00;
+#golden-ratio {
 	background: linear-gradient(to right, #A68C00, #FFE140);
-	width: 270px;
-	height: 167px;
+	aspect-ratio: 1.618 / 1;
 }
 
-#Abox span{
-	top: 60px;
+#four-3-ratio {
+	background: linear-gradient(to right, #1D8C00, #5FEB3B);
+	aspect-ratio: 4 / 3;
 }
 
-#Bbox span{
-	top: 70px;
-}
-
-#Cbox span{
-	top: 85px;
-}
-
-#Dbox span{
-	top: 68px;
+#three-2-ratio {
+	background: linear-gradient(to right, #7A005C, #DD37B4);
+	aspect-ratio: 3 / 2;
 }
 
 .twitter-share-button {
