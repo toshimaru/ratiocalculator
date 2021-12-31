@@ -5,6 +5,8 @@ const boxes = ['A', 'B', 'C', 'D'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
+tooltip.disable();
+
 // TODO: convert to a class
 const Ratio = function (num) {
 	if (!(this instanceof Ratio)) {
@@ -73,18 +75,10 @@ function changeText (n) {
 }
 
 // Change mode
-$('input:radio').change(function () {
-	if ($(this).val() === 'w') {
-		mode = 'w';
-		$("#px-input").attr('placeholder', 'width')
-			.trigger('change');
-	} else {
-		mode = 'h';
-		$("#px-input").attr('placeholder', 'height')
-			.trigger('change');
-	};
-});
-
-$(function () {
-	tooltip.disable();
+document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+	radio.addEventListener('change', function () {
+		mode = this.value;
+		input.placeholder = $(this).val() === 'w' ? "width" : "height";
+		input.dispatchEvent(new Event('change'));
+	});
 });
