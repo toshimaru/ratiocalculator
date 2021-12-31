@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Ratio Calculator</title>
 	<meta name="description" content="Calculate aspect ratio.">
 	<meta property="og:title" content="Ratio Calculator">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-	<main>
-		<div class="hero-unit px-unit">
-			<h1>Ratio Calculator</h1>
 
-			<form id="form" onsubmit="return false;">
-				<input id="px" type="number" class="input-medium" placeholder="width" maxlength="12">
-				<div id="switcher" class="clearfix">
+<main>
+	<section class="text-center px-4 py-4 hero-unit">
+		<div class="row">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light">Ratio Calculator</h1>
+				<!-- <p class="lead text-muted">
+					Something short and leading about the collection below—its contents, the creator, etc.
+				</p> -->
+				<p>
+					<input id="px-input" type="number" class="input-medium" placeholder="width" maxlength="12"
+						data-bs-toggle="tooltip" title="Invalid Number!">
+					px
+				</p>
+				<span>
 					<label>
 						<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
 						<span>width</span>
@@ -25,73 +36,75 @@
 						<input type="radio" name="wh" id="optionsRadios2" value="h">
 						<span>height</span>
 					</label>
-				</div>
-			</form>
+				</span>
+			</div>
 		</div>
+	</section>
 
+	<div class="py-5"> 
 		<div class="container">
-			<div class="row row1">
-				<div class="span4">
-					<div id="Abox" class="box">
+			<div class="row mb-5">
+				<div class="col-md-4">
+					<div id="sixteen-9-ratio" class="box">
 					<span>16:9</span>
 					</div>
 				</div>
-				<div class="span2">
+				<div class="col-md-2">
 					<p>width: <span id="A_w"></span> &nbsp;px</p>
 					<p>height: <span id="A_h"></span> &nbsp;px</p>
 				</div>
 
-				<div class="span4">
-					<div id="Dbox" class="box">
-					<span>golden ratio</span>
+				<div class="col-md-4">
+					<div id="golden-ratio" class="box">
+					<span>Golden Ratio</span>
 					</div>
 				</div>
-				<div class="span2">
+				<div class="col-md-2">
 					<p>width: <span id="D_w"></span> &nbsp;px</p>
 					<p>height: <span id="D_h"></span> &nbsp;px</p>
 				</div>
 			</div>
 
-			<div class="row row2">
-				<div class="span4">
-					<div id="Bbox" class="box">
+			<div class="row">
+				<div class="col-md-4">
+					<div id="three-2-ratio" class="box">
 					<span>3:2</span>
 					</div>
 				</div>
-				<div class="span2">
+				<div class="col-md-2">
 					<p>width: <span id="B_w"></span> &nbsp;px</p>
 					<p>height: <span id="B_h"></span> &nbsp;px</p>
 				</div>
-
-				<div class="span4">
-					<div id="Cbox" class="box">
+				<div class="col-md-4">
+					<div id="four-3-ratio" class="box">
 					<span>4:3</span>
 					</div>
 				</div>
-				<div class="span2">
+				<div class="col-md-2">
 					<p>width: <span id="C_w"></span> &nbsp;px</p>
 					<p>height: <span id="C_h"></span> &nbsp;px</p>
 				</div>
 			</div>
 		</div>
-	</main>
+	</div>
+</main>
 
-	<footer>
-		<div class="container">
-			<p>
-				<a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-				<iframe
-					src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fratiocalculator.toshimaru.net&layout=button&size=small&width=69&height=20"
-					width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
-					allow="encrypted-media"></iframe>
-			</p>
-			<p>Designed and coded by <a href="https://twitter.com/toshimaru_e">@toshimaru_e</a>.</p>
+<footer class="text-center bg-dark py-5">
+	<div class="col-lg-6 mx-auto">
+		<div class="mb-2">
+			<a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+			<iframe
+				src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fratiocalculator.toshimaru.net&layout=button&size=small&width=69&height=20"
+				width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+				allow="encrypted-media"></iframe>
 		</div>
-	</footer>
+		<p class="mb-0">Designed and coded by <a href="https://twitter.com/toshimaru_e">@toshimaru_e</a>.</p>
+	</div>
+</footer>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
 
 <script>window.twttr = (function (d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0],

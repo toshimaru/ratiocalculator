@@ -1,117 +1,61 @@
 body {
-	font-family:'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	color: #eeeeee;
 }
 
 .hero-unit {
-	padding: 20px 0 10px;
-	margin-bottom: 30px;
 	background-color: #1ec200;
 	background: linear-gradient(to right, #b94848, #1ec200);
-}
-
-.px-unit {
-	font-size: 18px;
-	text-align: center;
 	border-bottom: solid 1px #ABABAB;
 }
 
-.px-unit h1 {
-	font-size: 40px;
-	padding-bottom: 20px;
-	text-shadow: 0px 2px 3px #333;
+h1 {
+	text-shadow: 0px 5px 7px #333;
 }
 
-.px-unit input[type="number"] {
-	font-size: 18px;
-	height: 30px;
-	border-radius: 5px;
-}
-
-.row1 {
-	padding-bottom: 50px;
-	height:200px;
-}
-
-.row2 {
-	padding-bottom: 40px;
-	height:220px;
-}
-
-
-/* boxes */
-.box {
-	display: none;
-	text-align: center;
-	box-shadow: 8px 8px 10px #222;
-}
-
-.box span{
-	font-size: 3em;
-	position: relative;
-	text-shadow: 2px 2px 3px #222;
-}
-
-#Abox {
-	background: linear-gradient(to right, #052C6E, #0F4FA8);
-	width: 270px;
-	height: 152px;
-}
-
-#Bbox {
-	background: linear-gradient(to right, #7A005C, #DD37B4);
-	width: 270px;
-	height: 180px;
-}
-
-#Cbox {
-	background-color: #5FEB3B;
-	background: linear-gradient(to right, #1D8C00, #5FEB3B);
-	width: 270px;
-	height: 203px;
-}
-
-#Dbox {
-	background-color: #A68C00;
-	background: linear-gradient(to right, #A68C00, #FFE140);
-	width: 270px;
-	height: 167px;
-}
-
-#Abox span{
-	top: 60px;
-}
-
-#Bbox span{
-	top: 70px;
-}
-
-#Cbox span{
-	top: 85px;
-}
-
-#Dbox span{
-	top: 68px;
+#px-input {
+	font-size: 1.1rem;
+	padding: 3px;
 }
 
 main {
 	background-color: #343434;
 }
 
-#form label{
-	display: inline;
-}
-
-#switcher span{
-	padding: 0 4px;
-}
-
-footer {
+.box {
+	/* display: none; */
 	text-align: center;
-	padding: 40px 0px;
-	background-color: #000;
+	box-shadow: 8px 8px 10px #222;
+	display: grid;
+	place-items: center;
 }
 
-footer .twitter-share-button {
-	padding: 0 10px;
+.box span {
+	font-size: 3rem;
+	position: relative;
+	text-shadow: 2px 2px 3px #222;
+}
+
+#sixteen-9-ratio {
+	background: linear-gradient(to right, #052C6E, #0F4FA8);
+	aspect-ratio: 16 / 9;
+}
+
+#golden-ratio {
+	background: linear-gradient(to right, #A68C00, #FFE140);
+	aspect-ratio: 1.618 / 1;
+}
+
+#four-3-ratio {
+	background: linear-gradient(to right, #1D8C00, #5FEB3B);
+	aspect-ratio: 4 / 3;
+}
+
+#three-2-ratio {
+	background: linear-gradient(to right, #7A005C, #DD37B4);
+	aspect-ratio: 3 / 2;
+}
+
+.twitter-share-button {
+	margin-right: 1rem;
 }
