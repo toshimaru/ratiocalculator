@@ -41,7 +41,10 @@ const Ratio = function (num) {
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
 		tooltip.disable();
-		$('.col-md-2 span').text('');
+		tooltip.hide();
+		document.querySelectorAll(".px-text").forEach(function(el) {
+			el.innerText = '';
+		});
 		return;
 	};
 
@@ -75,7 +78,6 @@ function changeText (n) {
 	boxes.forEach(function(box) {
 		const boxText = document.getElementById(`${box}_${mode}`);
 		boxText.innerText = n;
-		
 		const ratioText = document.getElementById(`${box}_${antiMode}`);
 		ratioText.innerText = ratio[fnMap[box]]();
 	});
