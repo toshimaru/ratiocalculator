@@ -87,12 +87,4 @@ $('input:radio').change(function () {
 
 $(function () {
 	tooltip.disable();
-
-	// TODO: make this work
-	var boxFade = function () {
-		$(".container div:hidden:first").fadeIn(300, function () {
-			boxFade();
-		});
-	}
-	boxFade();
 });
