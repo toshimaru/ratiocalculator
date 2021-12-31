@@ -54,6 +54,7 @@ $("#px-input").on('change keyup', function() {
 		changeText(n);
 	} else {
 		tooltip.disable();
+		tooltip.hide();
 		changeText(n);
 	}
 });
