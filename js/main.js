@@ -61,17 +61,24 @@ input.addEventListener('input', (e) => {
 });
 
 function changeText (n) {
-	boxes.forEach(function (box) {
+	const ratio = new Ratio(n);
+	const antiMode = (mode === 'w') ? 'h' : 'w';
+
+	// TODO: rename box IDs
+	const fnMap = {
+		'A': 'sixteenToNine',
+		'B': 'threeToTwo',
+		'C': 'fourToThree',
+		'D': 'goldenRatio',
+	};
+
+	boxes.forEach(function(box) {
 		const boxText = document.getElementById(`${box}_${mode}`);
 		boxText.innerText = n;
-	})
-
-	const ratio = new Ratio(n);
-	const antimode = (mode === 'w') ? 'h' : 'w';
-	$("#A_" + antimode).text(ratio.sixteenToNine());
-	$("#B_" + antimode).text(ratio.threeToTwo());
-	$("#C_" + antimode).text(ratio.fourToThree());
-	$("#D_" + antimode).text(ratio.goldenRatio());
+		
+		const ratioText = document.getElementById(`${box}_${antiMode}`);
+		ratioText.innerText = ratio[fnMap[box]]();
+	});
 }
 
 // Change mode
