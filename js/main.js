@@ -59,13 +59,12 @@ $("#px-input").on('change keyup', function() {
 });
 
 function changeText (n) {
-	var ratio = new Ratio(n);
+	boxes.forEach(function (box) {
+		$(`#${box}_${mode}`).text(n);
+	})
 
-	$.each(boxes, function(_i, val){
-		$('#' + val + '_' + mode).text(n);
-	});
-
-	var antimode = (mode === 'w') ? 'h' : 'w';
+	const ratio = new Ratio(n);
+	const antimode = (mode === 'w') ? 'h' : 'w';
 	$("#A_" + antimode).text(ratio.sixteenToNine());
 	$("#B_" + antimode).text(ratio.threeToTwo());
 	$("#C_" + antimode).text(ratio.fourToThree());
