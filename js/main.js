@@ -38,15 +38,14 @@ const Ratio = function (num) {
 	}
 }
 
-$("#px-input").on('change keyup', function() {
-	if (this.value === '') {
+input.addEventListener('input', (e) => {
+	if (e.target.value === '') {
 		tooltip.disable();
 		$('.col-md-2 span').text('');
 		return;
 	};
 
-	var n = parseInt(this.value);
-
+	const n = parseInt(e.target.value);
 	if (isNaN(n)) {
 		tooltip.enable();
 		tooltip.show();
@@ -75,10 +74,10 @@ function changeText (n) {
 }
 
 // Change mode
-document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
-	radio.addEventListener('change', function () {
-		mode = this.value;
-		input.placeholder = $(this).val() === 'w' ? "width" : "height";
-		input.dispatchEvent(new Event('change'));
+document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
+	radio.addEventListener('change', (e) => {
+		mode = e.target.value;
+		input.placeholder = mode === 'w' ? "width" : "height";
+		input.dispatchEvent(new Event('input'));
 	});
 });
