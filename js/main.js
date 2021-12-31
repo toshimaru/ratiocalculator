@@ -1,9 +1,11 @@
 "use strict";
 
-var mode = 'w';
-var boxes = ['A', 'B', 'C', 'D'];
+let mode = 'w';
+const boxes = ['A', 'B', 'C', 'D'];
+const input = document.getElementById('px-input');
+const tooltip = new bootstrap.Tooltip(input);
 
-var Ratio = function (num) {
+const Ratio = function (num) {
 	if (!(this instanceof Ratio)) {
 		return new Ratio(num);
 	};
@@ -33,19 +35,24 @@ var Ratio = function (num) {
 	}
 }
 
-$("#px").on('change keyup', function() {
+$("#px-input").on('change keyup', function() {
 	if (this.value === '') {
-		$("#px").tooltip('hide');
-		$('.span2 span').text('');
+		tooltip.disable();
+		$('.col-md-2 span').text('');
 		return;
 	};
 
 	var n = parseInt(this.value);
 
 	if (isNaN(n)) {
-		$("#px").tooltip('show');
+		tooltip.enable();
+		tooltip.show();
+	} else if (n < 0) {
+		tooltip.enable();
+		tooltip.show();
+		changeText(n);
 	} else {
-		$("#px").tooltip('hide');
+		tooltip.disable();
 		changeText(n);
 	}
 });
@@ -67,17 +74,17 @@ function changeText (n) {
 $('input:radio').change(function () {
 	if ($(this).val() === 'w') {
 		mode = 'w';
-		$("#px").attr('placeholder', 'width')
-		        .trigger('change');
+		$("#px-input").attr('placeholder', 'width')
+			.trigger('change');
 	} else {
 		mode = 'h';
-		$("#px").attr('placeholder', 'height')
-		        .trigger('change');
+		$("#px-input").attr('placeholder', 'height')
+			.trigger('change');
 	};
 });
 
 $(function () {
-	$("#px").tooltip({'title': 'invalid number!', 'trigger': 'manual', 'placement': 'bottom'});
+	tooltip.disable();
 
 	var boxFade = function () {
 		$(".container div:hidden:first").fadeIn(300, function () {
