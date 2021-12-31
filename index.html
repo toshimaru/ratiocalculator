@@ -23,9 +23,11 @@
 					Something short and leading about the collection below—its contents, the creator, etc.
 				</p> -->
 				<p>
-					<input id="px" type="number" class="input-medium" placeholder="width" maxlength="12">
+					<input id="px-input" type="number" class="input-medium" placeholder="width" maxlength="12"
+						data-bs-toggle="tooltip" title="Invalid Number!">
+					px
 				</p>
-				<p>
+				<span>
 					<label>
 						<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
 						<span>width</span>
@@ -34,7 +36,7 @@
 						<input type="radio" name="wh" id="optionsRadios2" value="h">
 						<span>height</span>
 					</label>
-				</p>
+				</span>
 			</div>
 		</div>
 	</section>
@@ -101,6 +103,7 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
 
 <script>window.twttr = (function (d, s, id) {
