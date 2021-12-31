@@ -5,6 +5,8 @@ const boxes = ['A', 'B', 'C', 'D'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
+tooltip.disable();
+
 // TODO: convert to a class
 const Ratio = function (num) {
 	if (!(this instanceof Ratio)) {
@@ -36,15 +38,17 @@ const Ratio = function (num) {
 	}
 }
 
-$("#px-input").on('change keyup', function() {
-	if (this.value === '') {
+input.addEventListener('input', (e) => {
+	if (e.target.value === '') {
 		tooltip.disable();
-		$('.col-md-2 span').text('');
+		tooltip.hide();
+		document.querySelectorAll(".px-text").forEach(function(el) {
+			el.innerText = '';
+		});
 		return;
 	};
 
-	var n = parseInt(this.value);
-
+	const n = parseInt(e.target.value);
 	if (isNaN(n)) {
 		tooltip.enable();
 		tooltip.show();
@@ -60,31 +64,30 @@ $("#px-input").on('change keyup', function() {
 });
 
 function changeText (n) {
-	boxes.forEach(function (box) {
-		$(`#${box}_${mode}`).text(n);
-	})
-
 	const ratio = new Ratio(n);
-	const antimode = (mode === 'w') ? 'h' : 'w';
-	$("#A_" + antimode).text(ratio.sixteenToNine());
-	$("#B_" + antimode).text(ratio.threeToTwo());
-	$("#C_" + antimode).text(ratio.fourToThree());
-	$("#D_" + antimode).text(ratio.goldenRatio());
+	const antiMode = (mode === 'w') ? 'h' : 'w';
+
+	// TODO: rename box IDs
+	const fnMap = {
+		'A': 'sixteenToNine',
+		'B': 'threeToTwo',
+		'C': 'fourToThree',
+		'D': 'goldenRatio',
+	};
+
+	boxes.forEach(function(box) {
+		const boxText = document.getElementById(`${box}_${mode}`);
+		boxText.innerText = n;
+		const ratioText = document.getElementById(`${box}_${antiMode}`);
+		ratioText.innerText = ratio[fnMap[box]]();
+	});
 }
 
 // Change mode
-$('input:radio').change(function () {
-	if ($(this).val() === 'w') {
-		mode = 'w';
-		$("#px-input").attr('placeholder', 'width')
-			.trigger('change');
-	} else {
-		mode = 'h';
-		$("#px-input").attr('placeholder', 'height')
-			.trigger('change');
-	};
-});
-
-$(function () {
-	tooltip.disable();
+document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
+	radio.addEventListener('change', (e) => {
+		mode = e.target.value;
+		input.placeholder = mode === 'w' ? "width" : "height";
+		input.dispatchEvent(new Event('input'));
+	});
 });
