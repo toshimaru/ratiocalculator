@@ -62,7 +62,8 @@ input.addEventListener('input', (e) => {
 
 function changeText (n) {
 	boxes.forEach(function (box) {
-		$(`#${box}_${mode}`).text(n);
+		const boxText = document.getElementById(`${box}_${mode}`);
+		boxText.innerText = n;
 	})
 
 	const ratio = new Ratio(n);
