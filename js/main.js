@@ -54,18 +54,18 @@ $("#px-input").on('change keyup', function() {
 		changeText(n);
 	} else {
 		tooltip.disable();
+		tooltip.hide();
 		changeText(n);
 	}
 });
 
 function changeText (n) {
-	var ratio = new Ratio(n);
+	boxes.forEach(function (box) {
+		$(`#${box}_${mode}`).text(n);
+	})
 
-	$.each(boxes, function(_i, val){
-		$('#' + val + '_' + mode).text(n);
-	});
-
-	var antimode = (mode === 'w') ? 'h' : 'w';
+	const ratio = new Ratio(n);
+	const antimode = (mode === 'w') ? 'h' : 'w';
 	$("#A_" + antimode).text(ratio.sixteenToNine());
 	$("#B_" + antimode).text(ratio.threeToTwo());
 	$("#C_" + antimode).text(ratio.fourToThree());
@@ -87,12 +87,4 @@ $('input:radio').change(function () {
 
 $(function () {
 	tooltip.disable();
-
-	// TODO: make this work
-	var boxFade = function () {
-		$(".container div:hidden:first").fadeIn(300, function () {
-			boxFade();
-		});
-	}
-	boxFade();
 });
