@@ -5,6 +5,7 @@ const boxes = ['A', 'B', 'C', 'D'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
+// TODO: convert to a class
 const Ratio = function (num) {
 	if (!(this instanceof Ratio)) {
 		return new Ratio(num);
@@ -15,22 +16,22 @@ const Ratio = function (num) {
 	this.isWidth = (mode === 'w') ? true : false;
 
 	this.sixteenToNine = function () {
-		var a = (this.isWidth) ? this.num * 9 / 16 : this.num * 16 / 9;
+		const a = (this.isWidth) ? this.num * 9 / 16 : this.num * 16 / 9;
 		return Math.round(a);
 	}
 
 	this.fourToThree = function () {
-		var a = (this.isWidth) ? this.num * 3 / 4 : this.num * 4 / 3;
+		const a = (this.isWidth) ? this.num * 3 / 4 : this.num * 4 / 3;
 		return Math.round(a);
 	}
 
 	this.threeToTwo = function () {
-		var a = (this.isWidth) ? this.num * 2 / 3 : this.num * 3 / 2;
+		const a = (this.isWidth) ? this.num * 2 / 3 : this.num * 3 / 2;
 		return Math.round(a);
 	}
 
 	this.goldenRatio = function () {
-		var a = (this.isWidth) ? this.num / 1.618: this.num * 1.618;
+		const a = (this.isWidth) ? this.num / 1.618: this.num * 1.618;
 		return Math.round(a);
 	}
 }
@@ -60,7 +61,7 @@ $("#px-input").on('change keyup', function() {
 function changeText (n) {
 	var ratio = new Ratio(n);
 
-	$.each(boxes, function(i, val){
+	$.each(boxes, function(_i, val){
 		$('#' + val + '_' + mode).text(n);
 	});
 
@@ -71,6 +72,7 @@ function changeText (n) {
 	$("#D_" + antimode).text(ratio.goldenRatio());
 }
 
+// Change mode
 $('input:radio').change(function () {
 	if ($(this).val() === 'w') {
 		mode = 'w';
@@ -86,11 +88,11 @@ $('input:radio').change(function () {
 $(function () {
 	tooltip.disable();
 
+	// TODO: make this work
 	var boxFade = function () {
 		$(".container div:hidden:first").fadeIn(300, function () {
 			boxFade();
 		});
 	}
-
 	boxFade();
 });
