@@ -13,10 +13,7 @@ input.addEventListener('input', (e) => {
 	}
 
 	const n = parseInt(e.target.value);
-	if (isNaN(n)) {
-		tooltip.enable();
-		tooltip.show();
-	} else if (n < 0) {
+	if (n < 0) {
 		tooltip.enable();
 		tooltip.show();
 		changeText(n);
