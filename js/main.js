@@ -34,7 +34,7 @@ input.addEventListener('input', (e) => {
 
 function changeText (n) {
 	const ratio = new Ratio(n, mode);
-	const antiMode = (mode === 'w') ? 'h' : 'w';
+	const antiMode = (ratio.isWidth) ? 'h' : 'w';
 
 	// TODO: rename box IDs
 	const fnMap = {
@@ -52,7 +52,7 @@ function changeText (n) {
 	});
 }
 
-// Change mode
+// Switch mode
 document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
 	radio.addEventListener('change', (e) => {
 		mode = e.target.value;
