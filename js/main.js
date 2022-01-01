@@ -1,7 +1,6 @@
 import { Ratio } from './modules/ratio.mjs';
 
 let mode = 'w';
-const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
@@ -11,7 +10,7 @@ input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
 		tooltip.disable();
 		tooltip.hide();
-		document.querySelectorAll(".px-text").forEach(function(el) {
+		document.querySelectorAll(".px-text").forEach((el) => {
 			el.innerText = '';
 		});
 		return;
@@ -35,8 +34,9 @@ input.addEventListener('input', (e) => {
 function changeText (n) {
 	const ratio = new Ratio(n, mode);
 	const antiMode = (ratio.isWidth) ? 'h' : 'w';
+	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 
-	boxes.forEach(function(box) {
+	boxes.forEach((box) => {
 		const boxText = document.getElementById(`${box}_${mode}`);
 		boxText.innerText = n;
 		const ratioText = document.getElementById(`${box}_${antiMode}`);
