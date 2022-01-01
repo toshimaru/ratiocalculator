@@ -52,3 +52,7 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
 		input.dispatchEvent(new Event('input'));
 	});
 });
+
+if (input.value !== '') {
+	input.dispatchEvent(new Event('input'));
+}
