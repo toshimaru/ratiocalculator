@@ -43,25 +43,25 @@ main {
   }
 }
 
-#sixteen-9-ratio {
+#sixteenToNine-ratio {
 	background: linear-gradient(to right, #052C6E, #0F4FA8);
 	aspect-ratio: 16 / 9;
 	animation: fade-in 0.4s ease 0.4s 1 forwards;
 }
 
-#golden-ratio {
+#goldenRatio {
 	background: linear-gradient(to right, #A68C00, #FFE140);
 	aspect-ratio: 1.618 / 1;
 	animation: fade-in 0.4s ease 0.8s 1 forwards;
 }
 
-#three-2-ratio {
+#threeToTwo-ratio {
 	background: linear-gradient(to right, #7A005C, #DD37B4);
 	aspect-ratio: 3 / 2;
 	animation: fade-in 0.4s ease 1.2s 1 forwards;
 }
 
-#four-3-ratio {
+#fourToThree {
 	background: linear-gradient(to right, #1D8C00, #8ba185);
 	aspect-ratio: 4 / 3;
 	animation: fade-in 0.4s ease 1.6s 1 forwards;

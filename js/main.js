@@ -1,52 +1,20 @@
-"use strict";
+import { Ratio } from './modules/ratio.mjs';
 
 let mode = 'w';
-const boxes = ['A', 'B', 'C', 'D'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
 tooltip.disable();
 
-// TODO: convert to a class
-const Ratio = function (num) {
-	if (!(this instanceof Ratio)) {
-		return new Ratio(num);
-	};
-
-	this.num = num;
-
-	this.isWidth = (mode === 'w') ? true : false;
-
-	this.sixteenToNine = function () {
-		const a = (this.isWidth) ? this.num * 9 / 16 : this.num * 16 / 9;
-		return Math.round(a);
-	}
-
-	this.fourToThree = function () {
-		const a = (this.isWidth) ? this.num * 3 / 4 : this.num * 4 / 3;
-		return Math.round(a);
-	}
-
-	this.threeToTwo = function () {
-		const a = (this.isWidth) ? this.num * 2 / 3 : this.num * 3 / 2;
-		return Math.round(a);
-	}
-
-	this.goldenRatio = function () {
-		const a = (this.isWidth) ? this.num / 1.618: this.num * 1.618;
-		return Math.round(a);
-	}
-}
-
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
 		tooltip.disable();
 		tooltip.hide();
-		document.querySelectorAll(".px-text").forEach(function(el) {
+		document.querySelectorAll(".px-text").forEach((el) => {
 			el.innerText = '';
 		});
 		return;
-	};
+	}
 
 	const n = parseInt(e.target.value);
 	if (isNaN(n)) {
@@ -64,26 +32,19 @@ input.addEventListener('input', (e) => {
 });
 
 function changeText (n) {
-	const ratio = new Ratio(n);
-	const antiMode = (mode === 'w') ? 'h' : 'w';
+	const ratio = new Ratio(n, mode);
+	const antiMode = (ratio.isWidth) ? 'h' : 'w';
+	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 
-	// TODO: rename box IDs
-	const fnMap = {
-		'A': 'sixteenToNine',
-		'B': 'threeToTwo',
-		'C': 'fourToThree',
-		'D': 'goldenRatio',
-	};
-
-	boxes.forEach(function(box) {
+	boxes.forEach((box) => {
 		const boxText = document.getElementById(`${box}_${mode}`);
 		boxText.innerText = n;
 		const ratioText = document.getElementById(`${box}_${antiMode}`);
-		ratioText.innerText = ratio[fnMap[box]]();
+		ratioText.innerText = ratio[box]();
 	});
 }
 
-// Change mode
+// Switch mode
 document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
 	radio.addEventListener('change', (e) => {
 		mode = e.target.value;
@@ -91,3 +52,7 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
 		input.dispatchEvent(new Event('input'));
 	});
 });
+
+if (input.value !== '') {
+	input.dispatchEvent(new Event('input'));
+}
