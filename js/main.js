@@ -1,7 +1,7 @@
 import { Ratio } from './modules/ratio.mjs';
 
 let mode = 'w';
-const boxes = ['A', 'B', 'C', 'D'];
+const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 const input = document.getElementById('px-input');
 const tooltip = new bootstrap.Tooltip(input);
 
@@ -36,19 +36,11 @@ function changeText (n) {
 	const ratio = new Ratio(n, mode);
 	const antiMode = (ratio.isWidth) ? 'h' : 'w';
 
-	// TODO: rename box IDs
-	const fnMap = {
-		'A': 'sixteenToNine',
-		'B': 'threeToTwo',
-		'C': 'fourToThree',
-		'D': 'goldenRatio',
-	};
-
 	boxes.forEach(function(box) {
 		const boxText = document.getElementById(`${box}_${mode}`);
 		boxText.innerText = n;
 		const ratioText = document.getElementById(`${box}_${antiMode}`);
-		ratioText.innerText = ratio[fnMap[box]]();
+		ratioText.innerText = ratio[box]();
 	});
 }
 
