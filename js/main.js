@@ -6,7 +6,7 @@ tooltip.disable();
 
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
-		resetText();
+		resetRatioText();
 		return;
 	}
 
@@ -14,15 +14,14 @@ input.addEventListener('input', (e) => {
 	if (n < 0) {
 		tooltip.enable();
 		tooltip.show();
-		changeText(n);
 	} else {
 		tooltip.disable();
 		tooltip.hide();
-		changeText(n);
 	}
+	updateRatioText(n);
 });
 
-function resetText() {
+function resetRatioText() {
 	tooltip.disable();
 	tooltip.hide();
 	document.querySelectorAll(".px-text").forEach((textEl) => {
@@ -30,7 +29,7 @@ function resetText() {
 	});
 }
 
-function changeText(n) {
+function updateRatioText(n) {
 	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 	
 	import('./modules/ratio.mjs').then((Module) => {
