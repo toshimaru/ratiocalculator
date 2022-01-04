@@ -1,6 +1,6 @@
 export class Ratio {
-  constructor(height_or_width, mode) {
-    this.height_or_width = height_or_width;
+  constructor(width_or_height, mode) {
+    this.width_or_height = width_or_height;
     this.mode = mode;
   }
 
@@ -9,22 +9,22 @@ export class Ratio {
   }
 
   sixteenToNine() {
-    const n = (this.isWidth) ? this.height_or_width * 9 / 16 : this.height_or_width * 16 / 9;
+    const n = (this.isWidth) ? this.width_or_height * 9 / 16 : this.width_or_height * 16 / 9;
     return Math.round(n);
   }
 
   fourToThree() {
-    const n = (this.isWidth) ? this.height_or_width * 3 / 4 : this.height_or_width * 4 / 3;
+    const n = (this.isWidth) ? this.width_or_height * 3 / 4 : this.width_or_height * 4 / 3;
     return Math.round(n);
   }
 
   threeToTwo() {
-    const n = (this.isWidth) ? this.height_or_width * 2 / 3 : this.height_or_width * 3 / 2;
+    const n = (this.isWidth) ? this.width_or_height * 2 / 3 : this.width_or_height * 3 / 2;
     return Math.round(n);
   }
 
   goldenRatio() {
-    const n = (this.isWidth) ? this.height_or_width / 1.618: this.height_or_width * 1.618;
+    const n = (this.isWidth) ? this.width_or_height / 1.618: this.width_or_height * 1.618;
     return Math.round(n);
   }
 }
