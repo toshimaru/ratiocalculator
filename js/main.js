@@ -9,6 +9,10 @@ function hideTooltip() {
 	tooltip.classList.add('d-none');
 }
 
+// TODO: Block invalid input
+// input.addEventListener('keydown', (e) => {
+// });
+
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
 		resetRatioText();
