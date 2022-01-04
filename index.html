@@ -22,22 +22,19 @@
 				<!-- <p class="lead">
 					Calcurate ratio.
 				</p> -->
-				<p class="input-area mb-2">
+				<div class="input-area mb-2">
 					<!-- TODO: use bootstrap form-group -->
-					<input id="px-input" type="number" class="input-medium" placeholder="width" maxlength="12"
-						data-bs-toggle="tooltip" title="Invalid Number!" autofocus>
+					<input id="px-input" type="number" class="input-medium" placeholder="width" maxlength="12" autofocus>
 					px
 					<span id="px-input-tooltip" class="d-none">Invalid Number!</span>
-				</p>
+				</div>
+				<div>
+					<input type="radio" name="width-or-height" id="widthMode" value="w" checked>
+					<label for="widthMode">width</label>
+					<input type="radio" name="width-or-height" id="heightMode" value="h">
+					<label for="heightMode">height</label>
+				</div>
 				<span>
-					<label class="me-1">
-						<input type="radio" name="wh" id="optionsRadios1" value="w" checked>
-						<span>width</span>
-					</label>
-					<label>
-						<input type="radio" name="wh" id="optionsRadios2" value="h">
-						<span>height</span>
-					</label>
 				</span>
 			</div>
 		</div>
