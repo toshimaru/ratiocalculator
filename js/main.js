@@ -1,8 +1,13 @@
 let mode = 'w';
 const input = document.getElementById('px-input');
-const tooltip = new bootstrap.Tooltip(input);
+const tooltip = document.getElementById('px-input-tooltip');
 
-tooltip.disable();
+function showTooltip(text = '') {
+	tooltip.classList.remove('d-none');
+}
+function hideTooltip() {
+	tooltip.classList.add('d-none');
+}
 
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
@@ -12,18 +17,15 @@ input.addEventListener('input', (e) => {
 
 	const n = parseInt(e.target.value);
 	if (n < 0) {
-		tooltip.enable();
-		tooltip.show();
+		showTooltip();
 	} else {
-		tooltip.disable();
-		tooltip.hide();
+		hideTooltip();
 	}
 	updateRatioText(n);
 });
 
 function resetRatioText() {
-	tooltip.disable();
-	tooltip.hide();
+	hideTooltip();
 	document.querySelectorAll(".px-text").forEach((textEl) => {
 		textEl.innerText = '';
 	});
