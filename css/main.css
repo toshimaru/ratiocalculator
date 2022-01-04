@@ -1,6 +1,10 @@
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Monda', sans-serif;
 	color: #eeeeee;
+}
+
+main {
+	background-color: #343434;
 }
 
 .hero-unit {
@@ -15,11 +19,10 @@ h1 {
 
 #px-input {
 	font-size: 1.1rem;
+	width: 10rem;
 	padding: 3px;
-}
-
-main {
-	background-color: #343434;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
 }
 
 .box {
@@ -30,9 +33,8 @@ main {
 	opacity: 0;
 }
 
-.box span {
-	font-size: 3rem;
-	position: relative;
+.box h2 {
+	font-size: 2.7rem;
 	text-shadow: 2px 2px 3px #222;
 }
 
@@ -69,4 +71,33 @@ main {
 
 .twitter-share-button {
 	margin-right: 1rem;
+}
+
+.input-area {
+  position: relative;
+}
+
+#px-input-tooltip {
+  position: absolute; /* 絶対配置 */
+  left: 50%; /* 親に対して中央配置 */
+  transform: translateX(-50%); /* 親に対して中央配置 */
+  bottom: -30px; /* 親要素下からの位置 */
+  display: inline-block;
+  padding: 5px; /* 余白 */
+  white-space: nowrap; /* テキストを折り返さない */
+  font-size: 0.8rem; /* フォントサイズ */
+  line-height: 1.3; /* 行間 */
+  background: #333; /* 背景色 */
+  color: #fff; /* 文字色 */
+  border-radius: 0.25rem;
+  transition: 0.3s fade-in; /* アニメーション */
+}
+#px-input-tooltip:before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  margin-left: -8px;
+  border: 8px solid transparent;
+  border-bottom: 8px solid #333;
 }

@@ -1,51 +1,58 @@
-import { Ratio } from './modules/ratio.mjs';
-
 let mode = 'w';
 const input = document.getElementById('px-input');
-const tooltip = new bootstrap.Tooltip(input);
+const tooltip = document.getElementById('px-input-tooltip');
 
-tooltip.disable();
+function showTooltip(text = '') {
+	tooltip.classList.remove('d-none');
+}
+function hideTooltip() {
+	tooltip.classList.add('d-none');
+}
+
+// TODO: Block invalid input
+// input.addEventListener('keydown', (e) => {
+// });
 
 input.addEventListener('input', (e) => {
 	if (e.target.value === '') {
-		tooltip.disable();
-		tooltip.hide();
-		document.querySelectorAll(".px-text").forEach((el) => {
-			el.innerText = '';
-		});
+		resetRatioText();
 		return;
 	}
 
 	const n = parseInt(e.target.value);
-	if (isNaN(n)) {
-		tooltip.enable();
-		tooltip.show();
-	} else if (n < 0) {
-		tooltip.enable();
-		tooltip.show();
-		changeText(n);
+	if (n < 0) {
+		showTooltip();
 	} else {
-		tooltip.disable();
-		tooltip.hide();
-		changeText(n);
+		hideTooltip();
 	}
+	updateRatioText(n);
 });
 
-function changeText (n) {
-	const ratio = new Ratio(n, mode);
-	const antiMode = (ratio.isWidth) ? 'h' : 'w';
-	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
-
-	boxes.forEach((box) => {
-		const boxText = document.getElementById(`${box}_${mode}`);
-		boxText.innerText = n;
-		const ratioText = document.getElementById(`${box}_${antiMode}`);
-		ratioText.innerText = ratio[box]();
+function resetRatioText() {
+	hideTooltip();
+	document.querySelectorAll(".px-text").forEach((textEl) => {
+		textEl.innerText = '';
 	});
 }
 
+function updateRatioText(n) {
+	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
+	
+	import('./modules/ratio.mjs').then((Module) => {
+		const ratio = new Module.Ratio(n, mode);
+		const antiMode = (ratio.isWidth) ? 'h' : 'w';
+
+		boxes.forEach((box) => {
+			const ratioBaseText = document.getElementById(`${box}_${mode}`);
+			ratioBaseText.innerText = n;
+			const ratioText = document.getElementById(`${box}_${antiMode}`);
+			ratioText.innerText = ratio[box]();
+		});
+	})
+}
+
 // Switch mode
-document.querySelectorAll('input[type="radio"]').forEach((radio) =>{
+document.querySelectorAll('input[type="radio"]').forEach((radio) => {
 	radio.addEventListener('change', (e) => {
 		mode = e.target.value;
 		input.placeholder = mode === 'w' ? "width" : "height";
