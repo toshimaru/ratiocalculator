@@ -38,8 +38,8 @@ function resetRatioText() {
 function updateRatioText(n) {
 	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
 	
-	import('./modules/ratio.mjs').then((Module) => {
-		const ratio = new Module.Ratio(n, mode);
+	import('./modules/ratioCalcurator.mjs').then((Module) => {
+		const ratio = new Module.RatioCalcurator(n, mode);
 		const antiMode = (ratio.isWidth) ? 'h' : 'w';
 
 		boxes.forEach((box) => {

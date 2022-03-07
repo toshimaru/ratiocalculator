@@ -1,4 +1,4 @@
-export class Ratio {
+export class RatioCalcurator {
   constructor(width_or_height, mode) {
     this.width_or_height = width_or_height;
     this.mode = mode;
