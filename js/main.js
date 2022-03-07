@@ -1,6 +1,9 @@
+import RatioTextUpdator from './modules/ratioTextUpdator.mjs';
+
 let mode = 'w';
 const input = document.getElementById('px-input');
 const tooltip = document.getElementById('px-input-tooltip');
+const updator = new RatioTextUpdator();
 
 function showTooltip(text = '') {
 	tooltip.classList.remove('d-none');
@@ -25,7 +28,7 @@ input.addEventListener('input', (e) => {
 	} else {
 		hideTooltip();
 	}
-	updateRatioText(n);
+	updator.update(n, mode);
 });
 
 function resetRatioText() {
@@ -33,22 +36,6 @@ function resetRatioText() {
 	document.querySelectorAll(".px-text").forEach((textEl) => {
 		textEl.innerText = '';
 	});
-}
-
-function updateRatioText(n) {
-	const boxes = ['sixteenToNine', 'goldenRatio', 'threeToTwo', 'fourToThree'];
-	
-	import('./modules/ratio.mjs').then((Module) => {
-		const ratio = new Module.Ratio(n, mode);
-		const antiMode = (ratio.isWidth) ? 'h' : 'w';
-
-		boxes.forEach((box) => {
-			const ratioBaseText = document.getElementById(`${box}_${mode}`);
-			ratioBaseText.innerText = n;
-			const ratioText = document.getElementById(`${box}_${antiMode}`);
-			ratioText.innerText = ratio[box]();
-		});
-	})
 }
 
 // Switch mode
