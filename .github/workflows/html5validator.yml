@@ -1,0 +1,11 @@
+name: HTML5 Validator
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Tests Integration with Github Actions.
+      uses: Cyb3r-Jak3/html5validator-action@master
